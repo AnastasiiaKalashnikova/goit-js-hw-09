@@ -34,17 +34,22 @@ flatpickr(dateTable, options);
 startBtn.addEventListener('click', onClick);
 
 function onClick(evt) {
+    
     // таймер почався
     const timerId = setInterval(() => {
         const currentTime = Date.now()
         const selectedDates = new Date(dateTable.value).getTime();// дата з інпута
         const difference = selectedDates - currentTime;//час таймера
-        const timeLeft = convertMs(difference);
-    
-        daysField.textContent = timeLeft.days.toString().padStart(2,'0');
-        hoursField.textContent = timeLeft.hours.toString().padStart(2,'0');
-        minutesField.textContent = timeLeft.minutes.toString().padStart(2,'0');
-        secondsField.textContent = timeLeft.seconds.toString().padStart(2,'0');
+        const { days, hours, minutes, seconds } = convertMs(difference);
+
+        function addLeadingZero(value) {
+            return value.toString().padStart(2,'0')
+        }
+
+        daysField.textContent = addLeadingZero(days);
+        hoursField.textContent = addLeadingZero(hours);
+        minutesField.textContent = addLeadingZero(minutes);
+        secondsField.textContent = addLeadingZero(seconds);
 
         //коли час вийшов
         if (difference <= 1) {
