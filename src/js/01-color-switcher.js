@@ -1,4 +1,3 @@
-console.log('hohoho')
 const start = document.querySelector('[data-start]')
 const stop = document.querySelector('[data-stop]');
 stop.disabled = true;
