@@ -1,0 +1,2 @@
+const t=document.querySelector("[data-start]"),e=document.querySelector("[data-stop]");e.disabled=!0;const a=document.querySelector("body");let d;t.addEventListener("click",(function(o){d=setInterval((()=>{a.style.backgroundColor=`#${Math.floor(16777215*Math.random()).toString(16).padStart(6,0)}`}),1e3),d&&(t.disabled=!0,e.disabled=!1)})),e.addEventListener("click",(function(a){clearInterval(d),t.disabled=!1,e.disabled=!0})),flatpickr(dateTable,options);
+//# sourceMappingURL=01-color-switcher.3c28ab04.js.map

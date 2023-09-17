@@ -1,2 +1,0 @@
-console.log("hohoho");const e=document.querySelector("[data-start]"),t=document.querySelector("[data-stop]");t.disabled=!0;const o=document.querySelector("body");let a;e.addEventListener("click",(function(d){a=setInterval((()=>{o.style.backgroundColor=`#${Math.floor(16777215*Math.random()).toString(16).padStart(6,0)}`}),1e3),a&&(e.disabled=!0,t.disabled=!1)})),t.addEventListener("click",(function(o){clearInterval(a),e.disabled=!1,t.disabled=!0})),flatpickr(dateTable,options);
-//# sourceMappingURL=01-color-switcher.a6467b77.js.map
